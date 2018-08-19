@@ -15,13 +15,13 @@ open class NotificationScheduler(val context : Context) {
         intent.putExtra("Message", message)
         val pending_intent = PendingIntent.getBroadcast(context, code, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         manager.setExact(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pending_intent)
-        LogUtils.print("NOTIFICATION WITH ID $code HAS BEEN SCHEDULED")
+        LogUtils.print("NOTIFICATION WITH ID $code SCHEDULED")
     }
 
     fun removeSchedule(code : Int) {
         val pending_intent = PendingIntent.getBroadcast(context, code, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         manager.cancel(pending_intent)
-        LogUtils.print("SCHEDULED NOTIFICATION WITH ID $code HAS BEEN DELETED")
+        LogUtils.print("SCHEDULED NOTIFICATION WITH ID $code DELETED")
     }
 
     fun getCalendar(year : Int, month : Int, day : Int, hour : Int, minute : Int) : Calendar {

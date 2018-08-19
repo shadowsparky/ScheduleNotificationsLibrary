@@ -31,7 +31,7 @@ open class NotificationWorker(val context : Context) {
         channel.description = "Test Notification"
         val manager  = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         manager.createNotificationChannel(channel)
-        LogUtils.print("CHANNEL WITH ID $NOTIFICATION_CHANNEL_ID HAS BEEN CREATED")
+        LogUtils.print("CHANNEL WITH ID $NOTIFICATION_CHANNEL_ID CREATED")
     }
 
     private fun sendLowerOreoNotification(title : String?, message : String?) {
@@ -68,6 +68,6 @@ open class NotificationWorker(val context : Context) {
         } else {
             sendLowerOreoNotification(title, message)
         }
-        LogUtils.print("NOTIFICATION WITH ID $NOTIFICATION_CHANNEL_ID HAS BEEN SHOWED")
+        LogUtils.print("NOTIFICATION WITH ID $NOTIFICATION_CHANNEL_ID SHOWED")
     }
 }
