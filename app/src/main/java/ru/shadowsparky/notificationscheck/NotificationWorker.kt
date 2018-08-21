@@ -6,7 +6,6 @@ import android.app.NotificationManager
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import android.view.View.VISIBLE
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -17,7 +16,7 @@ open class NotificationWorker(val context : Context) {
 
     private val compat_manager = NotificationManagerCompat.from(context)
 
-    fun createNotificationChannel() {
+    private fun createNotificationChannel() {
         val channel = NotificationChannel(
                 NOTIFICATION_CHANNEL_ID,
                 NOTIFICATION_CHANNEL_NAME,
